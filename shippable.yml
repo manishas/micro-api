@@ -4,7 +4,10 @@ language: node_js
 # version numbers, testing against one version of node
 node_js:
     - 0.10.33
-    
+
+env:
+    - XUNIT_FILE=./shippable/testresults/result.xml API_PORT=3001
+
 build:
     pre_ci: 
       - docker build -t test/micro-api .
@@ -17,9 +20,6 @@ build:
       - ls -al
       - npm install --save-dev
       - grunt    
-
-#env:
-#    - XUNIT_FILE=./shippable/testresults/result.xml API_PORT=3001
 
 #before_install:
 #    - node --version
