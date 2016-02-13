@@ -4,7 +4,6 @@ language: node_js
 # version numbers, testing against one version of node
 node_js:
     - 0.10.33
-    - 0.12
 
 env:
     - XUNIT_FILE=./shippable/testresults/result.xml API_PORT=3001
@@ -22,7 +21,7 @@ build:
       - node --version
       - mkdir -p ./shippable/testresults
       - mkdir -p ./shippable/codecoverage
-      - npm install --save-dev
+      - npm install
       - grunt    
       - ./node_modules/.bin/istanbul cover grunt -- -u tdd
       - ./node_modules/.bin/istanbul report cobertura --dir  ./shippable/codecoverage/
