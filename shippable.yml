@@ -10,9 +10,9 @@ env:
 
 build:
     pre_ci: 
-      - docker build -t manishas/micro-api:$BUILD_NUMBER .
+      - docker build -t manishas/micro-api:$BRANCH.$BUILD_NUMBER .
     post_ci: 
-      - docker push manishas/micro-api:$BUILD_NUMBER
+      - docker push manishas/micro-api:$BRANCH.$BUILD_NUMBER
 
 integrations:
   hub:
